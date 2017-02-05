@@ -36,7 +36,8 @@ router.get("/") {
 Kitura.addHTTPServer(onPort: 8090, with: router)
 
 // Start the Kitura runloop (this call never returns)
-Kitura.run()```
+Kitura.run()
+```
 
 * Build the project `swift build`
 * Run binary `././build/debug/kitura-server-swift`
