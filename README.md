@@ -4,6 +4,37 @@ An application server, written in Swift, backed with IBM's [Kitura](https://gith
 
 ## Setup 
 
-1. Create folder `kitura-server-swift`
-2. Move to folder
-3. execute `swift package init --type executable`
+* Create folder `kitura-server-swift`
+* Move to folder
+* Execute `swift package init --type executable`
+* Add dependency in `Package.swift`
+
+```
+let package = Package(
+    name: "myFirstProject",
+    dependencies: [
+        .Package(url: "https://github.com/IBM-Swift/Kitura.git", majorVersion: 1, minor: 4)
+    ])
+```
+
+* Build the project `swift build`
+* Add following code to `Sources/main.swift`
+
+```
+import Kitura
+
+// Create a new router
+let router = Router()
+
+// Handle HTTP GET requests to /
+router.get("/") {
+    request, response, next in
+    response.send("Hello, World!")
+    next()
+}
+
+// Add an HTTP server and connect it to the router
+Kitura.addHTTPServer(onPort: 8090, with: router)
+
+// Start the Kitura runloop (this call never returns)
+Kitura.run()```
