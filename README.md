@@ -11,7 +11,7 @@ An application server, written in Swift, backed with IBM's [Kitura](https://gith
 
 ```swift
 let package = Package(
-    name: "myFirstProject",
+    name: "kitura-server-swift",
     dependencies: [
         .Package(url: "https://github.com/IBM-Swift/Kitura.git", majorVersion: 1, minor: 4)
     ])
