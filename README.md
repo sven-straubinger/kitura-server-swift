@@ -9,7 +9,7 @@ An application server, written in Swift, backed with IBM's [Kitura](https://gith
 * Execute `swift package init --type executable`
 * Add dependency in `Package.swift`
 
-```
+```swift
 let package = Package(
     name: "myFirstProject",
     dependencies: [
@@ -17,10 +17,9 @@ let package = Package(
     ])
 ```
 
-* Build the project `swift build`
 * Add following code to `Sources/main.swift`
 
-```
+```swift
 import Kitura
 
 // Create a new router
@@ -38,3 +37,7 @@ Kitura.addHTTPServer(onPort: 8090, with: router)
 
 // Start the Kitura runloop (this call never returns)
 Kitura.run()```
+
+* Build the project `swift build`
+* Run binary `././build/debug/kitura-server-swift`
+* Create Xcode project with `swift package generate-xcodeproj`
