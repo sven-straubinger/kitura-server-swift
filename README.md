@@ -6,4 +6,4 @@ An application server, written in Swift, backed with IBM's [Kitura](https://gith
 
 1. Create folder `kitura-server-swift`
 2. Move to folder
-3. execute swift package init --type executable`
+3. execute `swift package init --type executable`
