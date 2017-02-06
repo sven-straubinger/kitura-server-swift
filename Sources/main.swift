@@ -10,6 +10,13 @@ router.get("/") {
     next()
 }
 
+// Handle HTTP GET requests to /
+router.get("/api") {
+    request, response, next in
+    response.send("Hello, API!")
+    next()
+}
+
 // Add an HTTP server and connect it to the router
 Kitura.addHTTPServer(onPort: 8090, with: router)
 
