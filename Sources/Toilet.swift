@@ -27,6 +27,7 @@ class Toilet: NSObject {
         allVendors.append(Toilet());
         allVendors.append(Toilet());
         allVendors.append(Toilet());
+        allVendors.append(Toilet());
         
         return allVendors
     }
