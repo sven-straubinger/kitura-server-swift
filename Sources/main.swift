@@ -1,4 +1,5 @@
 import Kitura
+import SwiftyJSON
 
 // Create a new router
 let router = Router()
@@ -13,7 +14,12 @@ router.get("/") {
 // Handle HTTP GET requests to /
 router.get("/api") {
     request, response, next in
-    response.send("Hello, API!")
+    
+//    response.send("Hello, API!")
+    
+    var toilet = Toilet()
+    response.status(.OK).send(json: JSON(toilet.toJSON()));
+    
     next()
 }
 
