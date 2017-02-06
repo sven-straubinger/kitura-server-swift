@@ -15,10 +15,16 @@ router.get("/") {
 router.get("/api") {
     request, response, next in
     
+    // Single response
 //    response.send("Hello, API!")
     
-    var toilet = Toilet()
-    response.status(.OK).send(json: JSON(toilet.toJSON()));
+    // Single toilet
+//    var toilet = Toilet()
+//    response.status(.OK).send(json: JSON(toilet.toJSON()));
+    
+    // All toilets
+    var allToilets = Toilet.dummies().map{ $0.toJSON() }
+    response.status(.OK).send(json: JSON(allToilets));
     
     next()
 }
