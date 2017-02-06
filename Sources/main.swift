@@ -19,7 +19,7 @@ router.get("/api/restrooms") {
 //    response.send("Hello, API!")
     
     // Single toilet
-//    var toilet = Toilet()
+//    var toilet = Toilet(1,false,"Reutlingen-Basement-1")
 //    response.status(.OK).send(json: JSON(toilet.toJSON()));
     
     // All toilets
