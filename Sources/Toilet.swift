@@ -21,5 +21,14 @@ class Toilet: NSObject {
             "name": self.name
         ]
     }
+    
+    static func dummies() -> [Toilet] {
+        var allVendors = Array<Toilet>()
+        allVendors.append(Toilet());
+        allVendors.append(Toilet());
+        allVendors.append(Toilet());
+        
+        return allVendors
+    }
 
 }
