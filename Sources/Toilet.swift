@@ -14,11 +14,11 @@ class Toilet: NSObject {
     var locked = false
     var name   = "RT-1"
     
-    func toJSON() -> Dictionary<String, AnyObject> {
+    func toJSON() -> Dictionary<String, Any> {
         return [
-            "id": self.id as AnyObject,
-            "locked": self.locked as AnyObject,
-            "name": self.name as AnyObject
+            "id": self.id,
+            "locked": self.locked,
+            "name": self.name
         ]
     }
 
