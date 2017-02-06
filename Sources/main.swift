@@ -12,7 +12,7 @@ router.get("/") {
 }
 
 // Handle HTTP GET requests to /
-router.get("/api") {
+router.get("/api/restrooms") {
     request, response, next in
     
     // Single response
