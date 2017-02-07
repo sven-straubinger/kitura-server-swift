@@ -4,27 +4,28 @@ import SwiftyJSON
 // Create a new router
 let router = Router()
 
-// Handle HTTP GET requests to /
-router.get("/") {
+// Get ALL restrooms
+router.get("/restrooms") {
     request, response, next in
-    response.send("Hello, World!")
+    
+    var allToilets = Toilet.dummies().map{ $0.toJSON() }
+    response.status(.OK).send(json: JSON(allToilets));
+    
     next()
 }
 
-// Handle HTTP GET requests to /
-router.get("/api/restrooms") {
+// Get a single restroom
+router.get("/restrooms/:identifier") {
     request, response, next in
     
-    // Single response
-//    response.send("Hello, API!")
+    guard let identifier = Int(request.parameters["identifier"]!) else {
+        response.status(.notFound).send("404 - Not found")
+        next()
+        return
+    }
     
-    // Single toilet
-//    var toilet = Toilet(1,false,"Reutlingen-Basement-1")
-//    response.status(.OK).send(json: JSON(toilet.toJSON()));
-    
-    // All toilets
-    var allToilets = Toilet.dummies().map{ $0.toJSON() }
-    response.status(.OK).send(json: JSON(allToilets));
+    var toilet = Toilet(identifier,false,"Reutlingen-Basement-1")
+    response.status(.OK).send(json: JSON(toilet.toJSON()));
     
     next()
 }
